@@ -1,0 +1,23 @@
+/* src/app/header/header.component.css */
+header {
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: white; /* Adjust as needed */
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+

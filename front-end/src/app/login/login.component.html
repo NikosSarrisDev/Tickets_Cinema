@@ -1,0 +1,24 @@
+<!-- login.component.html -->
+
+<div class="login-container">
+  <div class="login-box">
+    <h2>Login</h2>
+    <form (ngSubmit)="loginEvent()">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <div class="error-message" *ngIf="iserrorLoginMessage">
+      Invalid Credentials
+      <a routerLink="/register" class="register-link">Register here</a>
+    </div>
+    <a routerLink="/register" class="register-link_normal">Register here</a>
+  </div>
+
+</div>

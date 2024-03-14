@@ -1,0 +1,16 @@
+<!-- user-icon.component.html -->
+
+<div class="user-icon">
+<!--  <button (click)="onLogoutClick()">-->
+  <button>
+    <!-- Add your user icon or avatar here -->
+    <img src="assets/usersPhotos/User.png" alt="User Icon" width="50" height="50">
+  </button>
+  <div class="dropdown-content">
+<!--    <a href="#">Logout</a>-->
+    <a href="#" (click)="onLogout()">Logout</a>
+  </div>
+  <div>
+    {{this.sharedDataToReceive}}
+  </div>
+</div>

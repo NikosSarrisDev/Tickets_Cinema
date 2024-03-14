@@ -1,0 +1,48 @@
+.movie-container {
+  display: flex;
+}
+
+.movieBorder {
+  margin: 10px;
+  padding: 10px;
+  border: 0px solid #ccc;
+  position: relative;
+  overflow: hidden; /* Ensure child elements don't overflow */
+  width: 250px;
+  height: 350px;
+}
+
+.movieBorder img {
+  width: 100%;
+  height: auto;
+  transition: filter 0.5s;
+}
+
+.movieBorder:hover img {
+  filter: grayscale(100%);
+}
+
+.additional-info-box {
+  /*position: relative;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.movieBorder:hover .additional-info-box {
+  opacity: 1;
+}
+
+.ticketButton {
+  position: absolute;
+  /*left: 0;*/
+  /*bottom: 0;*/
+}
+

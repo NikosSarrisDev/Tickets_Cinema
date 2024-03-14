@@ -1,0 +1,18 @@
+<app-search-bar (searchTextChanged)="onSearchTextEntered($event)"></app-search-bar>
+
+<div class="movie-container" (mouseenter)="showInBox = true" (mouseleave)="showInBox = false">
+  <div class="movieBorder" (mouseenter)="showInBox = true" (mouseleave)="showInBox = false" *ngFor="let movie of movies">
+    <div *ngIf="searchText === '' || movie.title.toLowerCase().includes(searchText)">
+    <img src='assets/moviePhotos/{{movie.image}}' alt="Movie Image" width="250" height="350">
+    <div class="additional-info-box" *ngIf="showInBox">
+      <p>Title: {{movie.title}}</p>
+      <p>Director: {{movie.director}}</p>
+      <p>Actors: {{movie.actors}}</p>
+      <p>Duration: {{movie.duration}}</p>
+      <p>Ticket Count: {{movie.ticketCount}}</p>
+      <button class="ticketButton">TICKETS</button>
+
+    </div>
+    </div>
+  </div>
+</div>
