@@ -8,8 +8,10 @@ import { AuthModule } from './auth/auth.module';
 
 
 @Module({
-  imports: [MongooseModule.forRoot("mongodb://127.0.0.1/Cinema"), MoviesModule, UserModule, AuthModule],
+  imports: [MongooseModule.forRoot("mongodb+srv://nikolaossarrisnode:ZMkQEEgy5wfUISOb@cluster0.u04qbkl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"), MoviesModule, UserModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
+
+// mongodb+srv://nikolaossarrisnode:ZMkQEEgy5wfUISOb@cluster0.u04qbkl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
