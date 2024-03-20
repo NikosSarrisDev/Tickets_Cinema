@@ -5,6 +5,9 @@ import {FormsModule} from "@angular/forms";
 import {Router, RouterLink} from "@angular/router";
 import {NgIf} from "@angular/common";
 import {SharedLoginUserIconServiceService} from "../shared-login-user-icon-service.service";
+import { LocalNotifications } from "@capacitor/local-notifications";
+import { PushNotifications } from "@capacitor/push-notifications";
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -43,6 +46,7 @@ export class LoginComponent implements OnInit, OnDestroy{
 
   //Event όταν πατάω το κουμπί για login
   loginEvent(){
+
     this.userService.signIn(this.username, this.password).subscribe(
       (res) => {
 
@@ -53,6 +57,16 @@ export class LoginComponent implements OnInit, OnDestroy{
         //Καλώ τη συνάρτηση updateDataForTheUserIcon με την οποία κάνω ένα publication στο
         //BehaiviourSubject που βρίσκεται στο shared Service και όλοι που έχουν κάνει εγγραφή έχουν πρόσβαση
         this.updateDataForTheUserIcon(this.username);
+
+        LocalNotifications.schedule({
+          notifications:[
+            {
+              title: `A new Login action`,
+              body: `User ${this.username} has been logged in`,
+              id: 1
+            }
+          ]
+        })
 
         this.router.navigate(['/dashboard']);
       },

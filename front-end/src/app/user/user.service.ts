@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:3000/auth'
+  private apiUrl = 'https://b746-2a02-587-2f17-1d2c-81c0-1739-3b4c-a79c.ngrok-free.app/auth'
   constructor(private http: HttpClient) { }
 
   isAuthenticated: boolean = true;
